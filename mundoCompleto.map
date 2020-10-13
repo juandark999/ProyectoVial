@@ -1,0 +1,219 @@
+MAP
+    NAME MapaMundo
+        SIZE 900 600
+        STATUS ON
+        EXTENT 1054114.34 860243.47 1068487.54 879005.66
+
+        SHAPEPATH "shape/"
+        FONTSET "misc/fonts/fonts.txt"
+        SYMBOLSET "misc/symbols/symbols.sym"
+
+        WEB
+            IMAGEPATH "C:/ms4w/tmp/ms_tmp/"
+            IMAGEURL "/ms_tmp/"
+        END    
+
+
+
+        LAYER
+                NAME "MUNDO"
+                STATUS ON
+                DATA  "mundo.shp"
+                TYPE POLYGON
+                
+
+                CLASS
+                    
+                    STYLE 
+                        COLOR 202 255 112
+                        OUTLINECOLOR 85 107 47
+                    END    
+                    
+                END
+
+                END
+
+                  LAYER 
+
+            
+ LAYER
+            NAME "Lineas"
+            STATUS ON
+            DATA "lineas.shp"
+            TYPE LINE   
+            CLASS
+                
+                STYLE
+                    COLOR 155 123 0
+                    OUTLINECOLOR 0 0 0
+                END    
+            END   
+        END     
+
+        LAYER
+            NAME "Puntos"
+            STATUS ON
+            DATA "puntos.shp"
+            TYPE POINT
+            CLASS
+                
+                STYLE 
+                    COLOR 0 34 125
+                    OUTLINECOLOR 0 255 0
+                END    
+            END    
+        END    
+       
+        
+
+  
+
+        
+        
+
+LAYER
+        TRANSPARENCY 30
+        NAME "Nomenclatura"
+        STATUS ON
+        DATA "SegmentacionUrbana.shp"
+        TYPE LINE
+        LABELITEM "Nombre."
+        CLASS
+            NAME "Segmentacion"
+                    STYLE
+                    WIDTH 1.0 
+                    COLOR 155 55 0
+                    OUTLINECOLOR 0 0 0
+                        
+                END        
+                LABEL
+                        FONT "sans"
+                        TYPE truetype
+                        ENCODING "UTF-8"
+                        SIZE 9
+                        POSITION CC
+                        ANGLE auto
+                        PARTIALS true
+                        COLOR 0 0 0
+                END
+            END    
+        END 
+
+        LAYER
+        TRANSPARENCY 30
+        NAME "Segmentacion"
+        STATUS ON
+        DATA "SegmentacionUrbana.shp"
+        TYPE POLYGON
+        CLASS
+            NAME "Segmentacion"
+            STYLE 
+                    COLOR 0 0 0
+                    OUTLINECOLOR 0 0 0
+                        
+                END        
+                LABEL
+                        SIZE SMALL
+                        COLOR 0 0 0
+                END
+            END    
+        END 
+
+        LAYER
+        TRANSPARENCY 30
+        NAME "Cali"
+        STATUS ON
+        DATA "Cali3.shp"
+        TYPE POLYGON
+        CLASS
+            NAME "Cali"
+            STYLE 
+                    COLOR 255 123 0
+                    OUTLINECOLOR 0 0 0
+                END        
+            END    
+        END 
+
+        
+
+         LEGEND
+    IMAGECOLOR 255 255 255
+    KEYSIZE 18 12
+    KEYSPACING 5 5
+    LABEL
+        SIZE SMALL
+        TYPE BITMAP
+        BUFFER 0
+        COLOR 0 0 30 
+        FORCE FALSE
+        MINDISTANCE -1
+        MINFEATURESIZE -1
+        OFFSET 0 0
+        PARTIALS TRUE
+    END
+    POSITION LL
+    STATUS ON
+END 
+
+        SCALEBAR
+        IMAGECOLOR 255 255 255
+        LABEL   
+            COLOR 0 0 0
+            SIZE SMALL
+        END
+        SIZE 810 6
+        COLOR 255 255 255
+
+        BACKGROUNDCOLOR 0 0 0
+        OUTLINECOLOR 0 0 0
+
+        UNITS METERS
+        INTERVALS 8
+        STATUS ON 
+    END
+
+    REFERENCE
+                IMAGE Mundoclave.gif
+                EXTENT -180 -90 180 90
+                STATUS ON
+                COLOR -1 -1 -1
+                OUTLINECOLOR 255 0 0
+                SIZE 200 143
+            END 
+
+        LAYER
+            NAME "Lagos"
+            STATUS ON
+            DATA "Estados_Unidos_Lagos.shp"
+            TYPE POLYGON
+            CLASS
+                
+                STYLE 
+                    COLOR 0 34 125
+                    OUTLINECOLOR 0 255 0
+                END    
+            END    
+        END 
+         LAYER
+        CONNECTIONTYPE postgis
+        NAME "Punto"
+        STATUS ON
+        CONNECTION "user=postgres password=2218 dbname=mapa host=localhost port=5432"
+        DATA "geom FROM (select * from puntos_pruebas ) as punto using unique gid 
+        SRID=-1"
+        TYPE POINT
+        CLASS
+                STYLE
+                    SYMBOL star
+                    SIZE 10
+                    COLOR 0 34 150
+                    OUTLINECOLOR 0 250 0
+                END
+        END
+    END
+
+       
+END         
+              
+   
+   
