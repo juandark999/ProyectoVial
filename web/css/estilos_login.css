@@ -1,0 +1,84 @@
+#imagen{
+    
+    background-image: url('../img/cali_noche.jpg');
+    background-size: cover;
+    height: 100%;
+}
+#login-row{
+    border-radius: 1em;
+    max-width: 600px;
+    
+    
+}
+#register-link{
+    background-color: chartreuse;
+    border-radius: 1em;
+    
+}
+#login-box{
+    position: absolute;
+    right: 130px;
+    background-color: white;
+    border-radius: 0.5em;
+    position:relative;      
+    -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    padding: 1em;
+    background-color: white;
+    border-radius: 0.5em;
+    
+}
+#login-form{
+    max-height: 1000px;
+}
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
